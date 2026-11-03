@@ -1,0 +1,23 @@
+# Local configuration and generated files
+.env
+.env.*.local
+!*.example
+
+# Java
+backend/target/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Python
+ml-service/.venv/
+ml-service/__pycache__/
+ml-service/.pytest_cache/
+ml-service/artifacts/*.joblib
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+Thumbs.db

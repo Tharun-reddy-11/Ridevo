@@ -1,0 +1,35 @@
+spring:
+  config:
+    import: optional:file:../.env[.properties]
+  application:
+    name: ridenexa-api
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://127.0.0.1:3306/ridenexa?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Kolkata}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:Tharun@1126}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      mode: always
+      encoding: UTF-8
+server:
+  port: ${BACKEND_PORT:8081}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when_authorized
+info:
+  app:
+    name: RideNexa API
+    phase: marketplace-core
+ridenexa:
+  frontend-origin: ${FRONTEND_ORIGIN:http://localhost:5173}
+  ml-service-url: ${ML_SERVICE_URL:http://localhost:8000}
+  jwt-secret: ${JWT_SECRET:local-development-secret-change-before-deployment-2026}
+  admin-email: ${ADMIN_EMAIL:btharunreddy26@gmail.com}
+  admin-password: ${ADMIN_PASSWORD:Tharun@30}
+  upload-dir: ${UPLOAD_DIR:uploads}

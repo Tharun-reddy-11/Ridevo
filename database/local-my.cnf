@@ -1,0 +1,9 @@
+# Local-only isolated MySQL runtime for RideNexa verification.
+# It is not used by Docker Compose or production deployments.
+[mysqld]
+basedir="C:/Program Files/MySQL/MySQL Server 8.0"
+lc-messages-dir="C:/Program Files/MySQL/MySQL Server 8.0/share"
+datadir="D:/Projects/Ridevo/.runtime/mysql/data"
+port=3307
+bind-address=127.0.0.1
+log-error="D:/Projects/Ridevo/.runtime/mysql/server.err.log"
